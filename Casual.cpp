@@ -41,16 +41,17 @@ void Casual::endWorkDay(){
 } 
 
 void Casual::work(int mins){
-    if (energyLevel - (mins)/2 > 0)
+    float mins_float = (float)mins;
+    if (energyLevel - (mins_float)/2 > 0)
     {
-        energyLevel = energyLevel - mins/2;
-        hoursWorked[dayCount] = mins;
+        energyLevel = energyLevel - mins_float/2;
+        hoursWorked[dayCount] = mins_float;
     }
     else
     {
-        float x = energyLevel - mins/2;
-        std::cout << x << std::endl;
+        float workDone = energyLevel*2;
         energyLevel = 0;
+        hoursWorked[dayCount] = workDone;
     }
     
 }
@@ -69,8 +70,6 @@ float Casual::pay(){
             pay = pay + hoursWorked[i]*payRate*2;
         }
     }
-
-    std::cout << pay << std::endl;
 
     return pay;
     
