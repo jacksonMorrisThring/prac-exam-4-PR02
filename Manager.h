@@ -18,6 +18,9 @@ public:
     void set_daysWorked(int daysWorked);
     void set_hoursWorked(float hoursWorked);
 
+    int get_daysWorked();
+    float get_hoursWorked();
+
     virtual void work(int mins);
     virtual float pay();
 

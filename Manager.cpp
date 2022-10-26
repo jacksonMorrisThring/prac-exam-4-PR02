@@ -11,6 +11,14 @@ Manager::Manager(int payRate){
     daysWorked = 0;
 }               
 
+int Manager::get_daysWorked(){
+    return daysWorked;
+}
+
+float Manager::get_hoursWorked(){
+    return hoursWorked;
+}
+
 
 void Manager::set_daysWorked(int daysWorked){
     this -> daysWorked = daysWorked;
