@@ -2,6 +2,7 @@
 #define SHOP_H
 
 #include "Employee.h"
+#include "Casual.h"
 
 
 class Shop{
@@ -16,7 +17,9 @@ public:
 
     void addEmployee(Employee *employee);   // Adds a employee to the Shop
     Employee **get_employees();             // Returns the array of pointers to the five employee objects
-    int get_count();                     
+    int get_count();       
+
+    ~Shop();              
 };
 
 #endif
