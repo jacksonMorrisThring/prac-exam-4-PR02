@@ -22,7 +22,8 @@ float Manager::get_hoursWorked(){
 
 void Manager::set_daysWorked(int daysWorked){
     this -> daysWorked = daysWorked;
-    this -> hoursWorked = daysWorked * 8;
+    // this -> hoursWorked = daysWorked * 8;
+    this -> hoursWorked = 0;
 }
 
 void Manager::set_hoursWorked(float hoursWorked){
@@ -34,6 +35,7 @@ void Manager::set_hoursWorked(float hoursWorked){
     else{
         this -> daysWorked ++;
         energyLevel = 100;
+        this -> hoursWorked = 0;
     }
     
     
