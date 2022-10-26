@@ -19,6 +19,7 @@ public:
     void set_hoursWorked(float hoursWorked);
 
     virtual void work(int mins);
+    virtual float pay();
 
 };
 

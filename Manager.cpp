@@ -22,6 +22,10 @@ void Manager::set_hoursWorked(float hoursWorked){
     this -> daysWorked = hoursWorked/8;
 }
 
+float Manager::pay(){
+    return daysWorked*payRate;
+}
+
 void Manager::work(int mins){
     if (energyLevel - ((float)mins)/4 > 0)
     {
