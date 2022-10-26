@@ -44,7 +44,10 @@ void Manager::set_hoursWorked(float hoursWorked){
 }
 
 float Manager::pay(){
-    return daysWorked*8*payRate;
+    hoursWorked = 0;
+    float temp = daysWorked*8*payRate;
+    daysWorked = 0;
+    return temp;
 }
 
 void Manager::work(int mins){
