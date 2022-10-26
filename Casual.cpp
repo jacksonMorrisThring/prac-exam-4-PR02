@@ -45,13 +45,13 @@ void Casual::work(int mins){
     if (energyLevel - (mins_float)/2 > 0)
     {
         energyLevel = energyLevel - mins_float/2;
-        hoursWorked[dayCount] = mins_float;
+        hoursWorked[dayCount] = mins_float/60;
     }
     else
     {
         float workDone = energyLevel*2;
         energyLevel = 0;
-        hoursWorked[dayCount] = workDone;
+        hoursWorked[dayCount] = workDone/60;
     }
     
 }
@@ -63,11 +63,11 @@ float Casual::pay(){
     {
         if (i < 5)
         {
-            pay = pay + ((hoursWorked[i])/60)*payRate;
+            pay = pay + (hoursWorked[i])*payRate;
         }
         else
         {
-            pay = pay + ((hoursWorked[i])/60)*payRate*2;
+            pay = pay + (hoursWorked[i])*payRate*2;
         }
     }
 
