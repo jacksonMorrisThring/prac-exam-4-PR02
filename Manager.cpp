@@ -26,8 +26,17 @@ void Manager::set_daysWorked(int daysWorked){
 }
 
 void Manager::set_hoursWorked(float hoursWorked){
-    this -> hoursWorked = hoursWorked;
-    this -> daysWorked = hoursWorked/8;
+    if (hoursWorked < 280)
+    {
+        this -> hoursWorked = hoursWorked;
+    }
+    else{
+        this -> daysWorked ++;
+    }
+    
+    
+    
+    // this -> daysWorked = hoursWorked/8;
 }
 
 float Manager::pay(){
