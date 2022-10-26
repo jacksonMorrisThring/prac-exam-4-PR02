@@ -12,8 +12,8 @@ public:
     float hoursWorked;                     
     int daysWorked;  
 
-    int get_daysWorked();
-    float get_hoursWorked();
+    // int get_daysWorked();
+    // float get_hoursWorked();
 
     void set_daysWorked(int daysWorked);
     void set_hoursWorked(float hoursWorked);
