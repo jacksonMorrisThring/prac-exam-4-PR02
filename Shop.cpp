@@ -5,6 +5,7 @@
 Shop::Shop(){
     count = 0;
     employees = new Employee*[5];
+    Shop shop = new Shop[1];
 }                          
 /* Creates a Shop containing pointers to 5 Employee objects as an array; 
    These Employee objects could be either Managers or Casuals, and in any order
@@ -24,6 +25,13 @@ Employee **Shop::get_employees(){
 int Shop::get_count(){
     return count;
 }      
+
+Shop* Shop::createShop(int level){
+    if (level >= 10)
+    {
+        return Shop;
+    }
+}
 
 Shop::~Shop(){
     for (int i = 0; i < 5; i++)

@@ -15,6 +15,7 @@ public:
     Employee** employees;
     int count;
 
+    Shop* createShop(int level);
     void addEmployee(Employee *employee);   // Adds a employee to the Shop
     Employee **get_employees();             // Returns the array of pointers to the five employee objects
     int get_count();       
