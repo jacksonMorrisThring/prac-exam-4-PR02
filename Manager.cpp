@@ -1,0 +1,47 @@
+#include "Manager.h"
+
+Manager::Manager(){
+    payRate = 0;
+    hoursWorked = 0;
+    daysWorked = 0;
+}            
+Manager::Manager(int payRate){
+    this -> payRate = payRate;
+    hoursWorked = 0;
+    daysWorked = 0;
+}               
+
+
+void Manager::set_daysWorked(int daysWorked){
+    this -> daysWorked = daysWorked;
+    this -> hoursWorked = daysWorked * 8;
+}
+
+void Manager::set_hoursWorked(float hoursWorked){
+    this -> hoursWorked = hoursWorked;
+    this -> daysWorked = hoursWorked/8;
+}
+
+void Manager::work(int mins){
+    if (energyLevel - ((float)mins)/4 > 0)
+    {
+        if (hoursWorked + ((float)mins)/60 < 8)
+        {
+            energyLevel = energyLevel - ((float)mins)/4;
+            hoursWorked = hoursWorked + ((float)mins)/60;
+        }
+        else
+        {
+            hoursWorked = 8;
+            daysWorked++;
+            hoursWorked = 0;
+        }
+    }
+    else
+    {
+        float minsDone = energyLevel*4;
+        energyLevel = 0;
+        hoursWorked = minsDone/60;
+
+    }
+}
