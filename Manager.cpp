@@ -29,9 +29,11 @@ void Manager::set_hoursWorked(float hoursWorked){
     if (hoursWorked < 280)
     {
         this -> hoursWorked = hoursWorked;
+        energyLevel = energyLevel - (hoursWorked/60)/4;
     }
     else{
         this -> daysWorked ++;
+        energyLevel = 100;
     }
     
     
@@ -55,6 +57,7 @@ void Manager::work(int mins){
         {
             hoursWorked = 8;
             daysWorked++;
+            energyLevel = 100;
             hoursWorked = 0;
         }
     }
