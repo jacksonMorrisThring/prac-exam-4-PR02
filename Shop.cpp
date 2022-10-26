@@ -26,7 +26,7 @@ int Shop::get_count(){
 }      
 
 Shop::~Shop(){
-    for (int i = 0; i < count; i++)
+    for (int i = 0; i < 5; i++)
     {
         delete employees[i];
     }
