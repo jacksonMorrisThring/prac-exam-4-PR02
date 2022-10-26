@@ -1,0 +1,6 @@
+#include "Shop.h"
+
+int main(){
+
+    return 0;
+}
