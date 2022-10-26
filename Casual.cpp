@@ -63,11 +63,11 @@ float Casual::pay(){
     {
         if (i < 5)
         {
-            pay = pay + hoursWorked[i]*payRate;
+            pay = pay + ((hoursWorked[i])/60)*payRate;
         }
         else
         {
-            pay = pay + hoursWorked[i]*payRate*2;
+            pay = pay + ((hoursWorked[i])/60)*payRate*2;
         }
     }
 
