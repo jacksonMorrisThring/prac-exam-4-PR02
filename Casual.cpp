@@ -28,7 +28,7 @@ int Casual::get_dayCount(){
 }
 
 void Casual::set_dayCount(int newDayCount){
-    if (newDayCount < 8 && newDayCount > 0)
+    if (newDayCount < 8 && newDayCount >= 0)
     {
         dayCount = newDayCount;
     }
@@ -41,17 +41,21 @@ void Casual::endWorkDay(){
 } 
 
 void Casual::work(int mins){
-    float mins_float = (float)mins;
-    if (energyLevel - (mins_float)/2 > 0)
+
+    if (energyLevel - ((float)mins)/2 > 0)
     {
-        energyLevel = energyLevel - mins_float/2;
-        hoursWorked[dayCount] = mins_float/60;
+        // std::cout << "float mins/2 " <<  ((float)mins)/2 << std::endl;
+        energyLevel = energyLevel - ((float)mins)/2;
+        hoursWorked[dayCount] = hoursWorked[dayCount] + ((float)mins)/60;
+        // std::cout << "Hours worked " << hoursWorked[dayCount] << std::endl;
+        
     }
+
     else
     {
-        float workDone = energyLevel*2;
+        float minsDone = energyLevel*2;
         energyLevel = 0;
-        hoursWorked[dayCount] = workDone/60;
+        hoursWorked[dayCount] = minsDone/60;
     }
     
 }
@@ -70,6 +74,12 @@ float Casual::pay(){
             pay = pay + (hoursWorked[i])*payRate*2;
         }
     }
+
+    for (int i = 0; i < 7; i++)
+    {
+        hoursWorked[i] = 0;
+    }
+    
 
     return pay;
     
